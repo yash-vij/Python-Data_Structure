@@ -20,6 +20,14 @@ class Linked_list :
             temp.next = None
         print("Deleted data from last is : ", temp.data)
 
+    def delete_at_location(self,loc):
+        temp = self.head
+        count = 0
+        while(temp.next != None and count <=loc):
+            if(count == loc):
+                temp = temp.next
+            count = count+1
+
     def inser_at_front(self, front_data):
         new_node = Node(front_data)
 
