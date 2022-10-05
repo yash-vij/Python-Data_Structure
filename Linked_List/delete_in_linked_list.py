@@ -10,7 +10,15 @@ class Linked_list :
     def delete_front(self):
         temp = self.head.data
         self.head = self.head.next
-        print("Deleted data is : ",temp)
+        print("Deleted data from front is : ",temp)
+
+    def delete_last(self):
+        temp = self.head.next
+        while(temp.next != None):
+            temp = temp.next
+        if(temp.next == None):
+            temp.next = None
+        print("Deleted data from last is : ", temp.data)
 
     def inser_at_front(self, front_data):
         new_node = Node(front_data)
@@ -21,19 +29,20 @@ class Linked_list :
     def print_List(self):
         temp = self.head
         while temp.next!=None:
-            print(temp.data)
+            print(temp.data,"->",end=" ")
             temp = temp.next
 
 llist = Linked_list()
 
-llist.inser_at_front(23)
-llist.inser_at_front(12)
-llist.inser_at_front(234)
-llist.inser_at_front(324)
-llist.inser_at_front(120)
 llist.inser_at_front(1)
+llist.inser_at_front(2)
+llist.inser_at_front(3)
+llist.inser_at_front(4)
+llist.inser_at_front(5)
+llist.inser_at_front(6)
 
 llist.delete_front()
+llist.delete_last()
 
 llist.print_List()
 
