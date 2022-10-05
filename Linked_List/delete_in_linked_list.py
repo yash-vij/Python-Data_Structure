@@ -20,13 +20,22 @@ class Linked_list :
             temp.next = None
         print("Deleted data from last is : ", temp.data)
 
-    def delete_at_location(self,loc):
-        temp = self.head
-        count = 0
-        while(temp.next != None and count <=loc):
-            if(count == loc):
-                temp = temp.next
-            count = count+1
+    def delete_at_location(self,position):
+        if self.head is None:
+            return
+        index = 0
+        current = self.head
+        while current.next and index < position:
+            previous = current
+            current = current.next
+            index += 1
+
+        if index == 0:
+            self.head = self.head.next
+
+        else:
+            previous.next = current.next
+
 
     def inser_at_front(self, front_data):
         new_node = Node(front_data)
@@ -42,6 +51,7 @@ class Linked_list :
 
 llist = Linked_list()
 
+
 llist.inser_at_front(1)
 llist.inser_at_front(2)
 llist.inser_at_front(3)
@@ -51,7 +61,7 @@ llist.inser_at_front(6)
 
 llist.delete_front()
 llist.delete_last()
-
+llist.delete_at_location(2)
 llist.print_List()
 
 
