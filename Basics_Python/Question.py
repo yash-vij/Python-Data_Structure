@@ -36,7 +36,7 @@ for i in passwords:
     elif not re.search("([!@$%^&])+", i):
         continue
 
-    else:
+    else :
         accepted_pass.append(i)
 
 print((" ").join(accepted_pass))
