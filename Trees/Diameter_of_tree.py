@@ -36,7 +36,6 @@ def diameterOpt(root , height):
 
     height.h = max(lh.h, rh.h)+1
 
-    height.h = max(lh.h, rh.h) + 1
 
     # return maximum of the following
     # 1)left diameter
